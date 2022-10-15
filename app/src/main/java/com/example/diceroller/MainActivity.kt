@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import com.example.diceroller.databinding.ActivityMainBinding
 import java.text.NumberFormat
 
@@ -39,5 +40,8 @@ class MainActivity : AppCompatActivity() {
         }
         diceImage.setImageResource(drawableResource)
         diceImage.contentDescription = diceRoll.toString()
+
+        val toastMsg = Toast.makeText(this, "Rolou um Dado!", Toast.LENGTH_SHORT)
+        toastMsg.show()
     }
 }
