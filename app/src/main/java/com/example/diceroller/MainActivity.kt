@@ -22,11 +22,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun rollDice(){
-        //Não consegui aplicar desta forma:
-        //val dice = Dice(6)
-        //val diceRoll = dice.roll()
-
-        val diceRoll = (1..6).random()
+        val dice = Dice(6)
+        val diceRoll = dice.roll()
 
         val diceImage = binding.imageView
 
@@ -43,5 +40,11 @@ class MainActivity : AppCompatActivity() {
 
         val toastMsg = Toast.makeText(this, "Rolou um Dado!", Toast.LENGTH_SHORT)
         toastMsg.show()
+    }
+}
+
+class Dice (private val numSides: Int){
+    fun roll(): Int{
+        return(1..numSides).random()
     }
 }
